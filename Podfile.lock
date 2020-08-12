@@ -1,0 +1,34 @@
+PODS:
+  - IQKeyboardManagerSwift (6.5.5)
+  - Marshal (1.2.7)
+  - QuickLayout (3.0.0)
+  - SwiftDate (5.1.0)
+  - YYCategories (1.0.4):
+    - YYCategories/no-arc (= 1.0.4)
+  - YYCategories/no-arc (1.0.4)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - Marshal
+  - QuickLayout
+  - SwiftDate (~> 5.0)
+  - YYCategories
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManagerSwift
+    - Marshal
+    - QuickLayout
+    - SwiftDate
+    - YYCategories
+
+SPEC CHECKSUMS:
+  IQKeyboardManagerSwift: 0fb93310284665245591f50f7a5e38de615960b7
+  Marshal: ef480864a6af10a63f67be7e55bb5d8fe67a16d9
+  QuickLayout: 07b45a72b10083fee3f095990cfed1c1e7b27f0a
+  SwiftDate: 6329e58969a2de31cea7f1ee1143b247693196e7
+  YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
+
+PODFILE CHECKSUM: adbf51c2ed1ba0d124429d991335f7b1804c4d53
+
+COCOAPODS: 1.9.3
