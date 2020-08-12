@@ -12,6 +12,12 @@
 		F109E89D24E4199600BF2391 /* UINavigationController+SwapTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E89C24E4199600BF2391 /* UINavigationController+SwapTransition.swift */; };
 		F109E89F24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E89E24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift */; };
 		F109E8A124E419B800BF2391 /* UINavigationController+PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8A024E419B800BF2391 /* UINavigationController+PopAnimation.swift */; };
+		F109E8A424E41AB900BF2391 /* CGFloat+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8A324E41AB900BF2391 /* CGFloat+RGB.swift */; };
+		F109E8A624E41AE700BF2391 /* Int+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8A524E41AE700BF2391 /* Int+RGB.swift */; };
+		F109E8A824E41B0D00BF2391 /* UIColor+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8A724E41B0D00BF2391 /* UIColor+AppColors.swift */; };
+		F109E8AB24E41D6F00BF2391 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8AA24E41D6F00BF2391 /* UIView+Nib.swift */; };
+		F109E8B024E41DD100BF2391 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8AF24E41DD100BF2391 /* NSObject+ClassName.swift */; };
+		F109E8B324E41E1100BF2391 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8B224E41E1100BF2391 /* UIViewController+NavigationBar.swift */; };
 		F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8124E2D0D60005C933 /* AppDelegate.swift */; };
 		F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8324E2D0D60005C933 /* SceneDelegate.swift */; };
 		F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8524E2D0D60005C933 /* ViewController.swift */; };
@@ -31,6 +37,12 @@
 		F109E89C24E4199600BF2391 /* UINavigationController+SwapTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+SwapTransition.swift"; sourceTree = "<group>"; };
 		F109E89E24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+NavigationBarStyle.swift"; sourceTree = "<group>"; };
 		F109E8A024E419B800BF2391 /* UINavigationController+PopAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+PopAnimation.swift"; sourceTree = "<group>"; };
+		F109E8A324E41AB900BF2391 /* CGFloat+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+RGB.swift"; sourceTree = "<group>"; };
+		F109E8A524E41AE700BF2391 /* Int+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+RGB.swift"; sourceTree = "<group>"; };
+		F109E8A724E41B0D00BF2391 /* UIColor+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+AppColors.swift"; sourceTree = "<group>"; };
+		F109E8AA24E41D6F00BF2391 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
+		F109E8AF24E41DD100BF2391 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
+		F109E8B224E41E1100BF2391 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
 		F155CF7E24E2D0D60005C933 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F155CF8124E2D0D60005C933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F155CF8324E2D0D60005C933 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +90,10 @@
 		F109E89724E4181400BF2391 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F109E8B124E41DEF00BF2391 /* UIViewController */,
+				F109E8AE24E41DC800BF2391 /* NSObject */,
+				F109E8A924E41D5400BF2391 /* UIView */,
+				F109E8A224E41A9D00BF2391 /* Numerics */,
 				F109E89924E4195D00BF2391 /* UINavigationController */,
 				F109E89824E4181C00BF2391 /* UIColor */,
 			);
@@ -87,6 +103,7 @@
 		F109E89824E4181C00BF2391 /* UIColor */ = {
 			isa = PBXGroup;
 			children = (
+				F109E8A724E41B0D00BF2391 /* UIColor+AppColors.swift */,
 			);
 			path = UIColor;
 			sourceTree = "<group>";
@@ -100,6 +117,39 @@
 				F109E8A024E419B800BF2391 /* UINavigationController+PopAnimation.swift */,
 			);
 			path = UINavigationController;
+			sourceTree = "<group>";
+		};
+		F109E8A224E41A9D00BF2391 /* Numerics */ = {
+			isa = PBXGroup;
+			children = (
+				F109E8A324E41AB900BF2391 /* CGFloat+RGB.swift */,
+				F109E8A524E41AE700BF2391 /* Int+RGB.swift */,
+			);
+			path = Numerics;
+			sourceTree = "<group>";
+		};
+		F109E8A924E41D5400BF2391 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				F109E8AA24E41D6F00BF2391 /* UIView+Nib.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		F109E8AE24E41DC800BF2391 /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				F109E8AF24E41DD100BF2391 /* NSObject+ClassName.swift */,
+			);
+			path = NSObject;
+			sourceTree = "<group>";
+		};
+		F109E8B124E41DEF00BF2391 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F109E8B224E41E1100BF2391 /* UIViewController+NavigationBar.swift */,
+			);
+			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		F155CF7524E2D0D60005C933 = {
@@ -347,7 +397,13 @@
 				F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */,
 				F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */,
 				F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */,
+				F109E8B024E41DD100BF2391 /* NSObject+ClassName.swift in Sources */,
+				F109E8A824E41B0D00BF2391 /* UIColor+AppColors.swift in Sources */,
+				F109E8B324E41E1100BF2391 /* UIViewController+NavigationBar.swift in Sources */,
+				F109E8A424E41AB900BF2391 /* CGFloat+RGB.swift in Sources */,
+				F109E8A624E41AE700BF2391 /* Int+RGB.swift in Sources */,
 				F109E89F24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift in Sources */,
+				F109E8AB24E41D6F00BF2391 /* UIView+Nib.swift in Sources */,
 				F155CF8C24E2D0D60005C933 /* Timer.xcdatamodeld in Sources */,
 				F109E89B24E4198100BF2391 /* UINavigationController+RootViewController.swift in Sources */,
 				F109E89D24E4199600BF2391 /* UINavigationController+SwapTransition.swift in Sources */,
