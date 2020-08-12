@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		D9517DC68D2FF02E0886D30B /* libPods-Timer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F26912F59567F676BA793825 /* libPods-Timer.a */; };
+		F109E89B24E4198100BF2391 /* UINavigationController+RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E89A24E4198100BF2391 /* UINavigationController+RootViewController.swift */; };
+		F109E89D24E4199600BF2391 /* UINavigationController+SwapTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E89C24E4199600BF2391 /* UINavigationController+SwapTransition.swift */; };
+		F109E89F24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E89E24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift */; };
+		F109E8A124E419B800BF2391 /* UINavigationController+PopAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8A024E419B800BF2391 /* UINavigationController+PopAnimation.swift */; };
 		F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8124E2D0D60005C933 /* AppDelegate.swift */; };
 		F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8324E2D0D60005C933 /* SceneDelegate.swift */; };
 		F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8524E2D0D60005C933 /* ViewController.swift */; };
@@ -23,6 +27,10 @@
 /* Begin PBXFileReference section */
 		5BD89B538D7137346572928F /* Pods-Timer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timer.release.xcconfig"; path = "Target Support Files/Pods-Timer/Pods-Timer.release.xcconfig"; sourceTree = "<group>"; };
 		75052A8ECA0646AD5F5E430D /* Pods-Timer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Timer.debug.xcconfig"; path = "Target Support Files/Pods-Timer/Pods-Timer.debug.xcconfig"; sourceTree = "<group>"; };
+		F109E89A24E4198100BF2391 /* UINavigationController+RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+RootViewController.swift"; sourceTree = "<group>"; };
+		F109E89C24E4199600BF2391 /* UINavigationController+SwapTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+SwapTransition.swift"; sourceTree = "<group>"; };
+		F109E89E24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+NavigationBarStyle.swift"; sourceTree = "<group>"; };
+		F109E8A024E419B800BF2391 /* UINavigationController+PopAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+PopAnimation.swift"; sourceTree = "<group>"; };
 		F155CF7E24E2D0D60005C933 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F155CF8124E2D0D60005C933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F155CF8324E2D0D60005C933 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,8 +72,34 @@
 				75052A8ECA0646AD5F5E430D /* Pods-Timer.debug.xcconfig */,
 				5BD89B538D7137346572928F /* Pods-Timer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F109E89724E4181400BF2391 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F109E89924E4195D00BF2391 /* UINavigationController */,
+				F109E89824E4181C00BF2391 /* UIColor */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F109E89824E4181C00BF2391 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		F109E89924E4195D00BF2391 /* UINavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				F109E89A24E4198100BF2391 /* UINavigationController+RootViewController.swift */,
+				F109E89C24E4199600BF2391 /* UINavigationController+SwapTransition.swift */,
+				F109E89E24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift */,
+				F109E8A024E419B800BF2391 /* UINavigationController+PopAnimation.swift */,
+			);
+			path = UINavigationController;
 			sourceTree = "<group>";
 		};
 		F155CF7524E2D0D60005C933 = {
@@ -89,6 +123,7 @@
 		F155CF8024E2D0D60005C933 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				F109E89724E4181400BF2391 /* Extensions */,
 				F155CF9924E2D0EB0005C933 /* Libraries */,
 				F155CF9824E2D0E50005C933 /* UI */,
 				F155CF8124E2D0D60005C933 /* AppDelegate.swift */,
@@ -308,10 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F109E8A124E419B800BF2391 /* UINavigationController+PopAnimation.swift in Sources */,
 				F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */,
 				F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */,
 				F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */,
+				F109E89F24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift in Sources */,
 				F155CF8C24E2D0D60005C933 /* Timer.xcdatamodeld in Sources */,
+				F109E89B24E4198100BF2391 /* UINavigationController+RootViewController.swift in Sources */,
+				F109E89D24E4199600BF2391 /* UINavigationController+SwapTransition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
