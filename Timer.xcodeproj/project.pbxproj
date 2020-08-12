@@ -25,6 +25,13 @@
 		F109E8BF24E4272600BF2391 /* CommonInitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8BE24E4272600BF2391 /* CommonInitable.swift */; };
 		F109E8C124E4273D00BF2391 /* SceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8C024E4273D00BF2391 /* SceneProtocol.swift */; };
 		F109E8C324E428A100BF2391 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8C224E428A100BF2391 /* StoryboardInstantiable.swift */; };
+		F109E8C524E428F600BF2391 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8C424E428F600BF2391 /* BaseView.swift */; };
+		F109E8C724E4290A00BF2391 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8C624E4290A00BF2391 /* CircleView.swift */; };
+		F109E8C924E4292000BF2391 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8C824E4292000BF2391 /* RoundedView.swift */; };
+		F109E8CB24E4294300BF2391 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8CA24E4294300BF2391 /* RoundedButton.swift */; };
+		F109E8CD24E4296F00BF2391 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8CC24E4296F00BF2391 /* BaseNavigationController.swift */; };
+		F109E8CF24E4298600BF2391 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8CE24E4298600BF2391 /* RootViewController.swift */; };
+		F109E8D124E429AC00BF2391 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8D024E429AC00BF2391 /* BaseViewController.swift */; };
 		F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8124E2D0D60005C933 /* AppDelegate.swift */; };
 		F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8324E2D0D60005C933 /* SceneDelegate.swift */; };
 		F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8524E2D0D60005C933 /* ViewController.swift */; };
@@ -57,6 +64,13 @@
 		F109E8BE24E4272600BF2391 /* CommonInitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInitable.swift; sourceTree = "<group>"; };
 		F109E8C024E4273D00BF2391 /* SceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneProtocol.swift; sourceTree = "<group>"; };
 		F109E8C224E428A100BF2391 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
+		F109E8C424E428F600BF2391 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F109E8C624E4290A00BF2391 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		F109E8C824E4292000BF2391 /* RoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
+		F109E8CA24E4294300BF2391 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		F109E8CC24E4296F00BF2391 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		F109E8CE24E4298600BF2391 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
+		F109E8D024E429AC00BF2391 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F155CF7E24E2D0D60005C933 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F155CF8124E2D0D60005C933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F155CF8324E2D0D60005C933 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -288,6 +302,9 @@
 		F155CF9F24E2D11C0005C933 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F109E8C424E428F600BF2391 /* BaseView.swift */,
+				F109E8C624E4290A00BF2391 /* CircleView.swift */,
+				F109E8C824E4292000BF2391 /* RoundedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +312,7 @@
 		F155CFA024E2D1210005C933 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
+				F109E8CA24E4294300BF2391 /* RoundedButton.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -302,6 +320,9 @@
 		F155CFA124E2D12F0005C933 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				F109E8CC24E4296F00BF2391 /* BaseNavigationController.swift */,
+				F109E8CE24E4298600BF2391 /* RootViewController.swift */,
+				F109E8D024E429AC00BF2391 /* BaseViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -430,15 +451,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F109E8CD24E4296F00BF2391 /* BaseNavigationController.swift in Sources */,
 				F109E8A124E419B800BF2391 /* UINavigationController+PopAnimation.swift in Sources */,
 				F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */,
 				F109E8C124E4273D00BF2391 /* SceneProtocol.swift in Sources */,
 				F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */,
+				F109E8D124E429AC00BF2391 /* BaseViewController.swift in Sources */,
 				F109E8C324E428A100BF2391 /* StoryboardInstantiable.swift in Sources */,
 				F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */,
 				F109E8B024E41DD100BF2391 /* NSObject+ClassName.swift in Sources */,
+				F109E8C724E4290A00BF2391 /* CircleView.swift in Sources */,
+				F109E8C924E4292000BF2391 /* RoundedView.swift in Sources */,
 				F109E8BD24E426EE00BF2391 /* AutoIdentifierCell.swift in Sources */,
 				F109E8A824E41B0D00BF2391 /* UIColor+AppColors.swift in Sources */,
+				F109E8C524E428F600BF2391 /* BaseView.swift in Sources */,
 				F109E8B324E41E1100BF2391 /* UIViewController+NavigationBar.swift in Sources */,
 				F109E8BB24E426D200BF2391 /* AppDelegateShareable.swift in Sources */,
 				F109E8B824E4268000BF2391 /* Constants.swift in Sources */,
@@ -446,8 +472,10 @@
 				F109E8A624E41AE700BF2391 /* Int+RGB.swift in Sources */,
 				F109E89F24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift in Sources */,
 				F109E8AB24E41D6F00BF2391 /* UIView+Nib.swift in Sources */,
+				F109E8CF24E4298600BF2391 /* RootViewController.swift in Sources */,
 				F155CF8C24E2D0D60005C933 /* Timer.xcdatamodeld in Sources */,
 				F109E89B24E4198100BF2391 /* UINavigationController+RootViewController.swift in Sources */,
+				F109E8CB24E4294300BF2391 /* RoundedButton.swift in Sources */,
 				F109E89D24E4199600BF2391 /* UINavigationController+SwapTransition.swift in Sources */,
 				F109E8B624E4267600BF2391 /* Constants+UI.swift in Sources */,
 				F109E8BF24E4272600BF2391 /* CommonInitable.swift in Sources */,
