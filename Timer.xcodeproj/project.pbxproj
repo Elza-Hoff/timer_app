@@ -18,6 +18,13 @@
 		F109E8AB24E41D6F00BF2391 /* UIView+Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8AA24E41D6F00BF2391 /* UIView+Nib.swift */; };
 		F109E8B024E41DD100BF2391 /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8AF24E41DD100BF2391 /* NSObject+ClassName.swift */; };
 		F109E8B324E41E1100BF2391 /* UIViewController+NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8B224E41E1100BF2391 /* UIViewController+NavigationBar.swift */; };
+		F109E8B624E4267600BF2391 /* Constants+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8B524E4267600BF2391 /* Constants+UI.swift */; };
+		F109E8B824E4268000BF2391 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8B724E4268000BF2391 /* Constants.swift */; };
+		F109E8BB24E426D200BF2391 /* AppDelegateShareable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8BA24E426D200BF2391 /* AppDelegateShareable.swift */; };
+		F109E8BD24E426EE00BF2391 /* AutoIdentifierCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8BC24E426EE00BF2391 /* AutoIdentifierCell.swift */; };
+		F109E8BF24E4272600BF2391 /* CommonInitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8BE24E4272600BF2391 /* CommonInitable.swift */; };
+		F109E8C124E4273D00BF2391 /* SceneProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8C024E4273D00BF2391 /* SceneProtocol.swift */; };
+		F109E8C324E428A100BF2391 /* StoryboardInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F109E8C224E428A100BF2391 /* StoryboardInstantiable.swift */; };
 		F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8124E2D0D60005C933 /* AppDelegate.swift */; };
 		F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8324E2D0D60005C933 /* SceneDelegate.swift */; };
 		F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F155CF8524E2D0D60005C933 /* ViewController.swift */; };
@@ -43,6 +50,13 @@
 		F109E8AA24E41D6F00BF2391 /* UIView+Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Nib.swift"; sourceTree = "<group>"; };
 		F109E8AF24E41DD100BF2391 /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+ClassName.swift"; sourceTree = "<group>"; };
 		F109E8B224E41E1100BF2391 /* UIViewController+NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+NavigationBar.swift"; sourceTree = "<group>"; };
+		F109E8B524E4267600BF2391 /* Constants+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+UI.swift"; sourceTree = "<group>"; };
+		F109E8B724E4268000BF2391 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F109E8BA24E426D200BF2391 /* AppDelegateShareable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateShareable.swift; sourceTree = "<group>"; };
+		F109E8BC24E426EE00BF2391 /* AutoIdentifierCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoIdentifierCell.swift; sourceTree = "<group>"; };
+		F109E8BE24E4272600BF2391 /* CommonInitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonInitable.swift; sourceTree = "<group>"; };
+		F109E8C024E4273D00BF2391 /* SceneProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneProtocol.swift; sourceTree = "<group>"; };
+		F109E8C224E428A100BF2391 /* StoryboardInstantiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInstantiable.swift; sourceTree = "<group>"; };
 		F155CF7E24E2D0D60005C933 /* Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F155CF8124E2D0D60005C933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F155CF8324E2D0D60005C933 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,6 +166,27 @@
 			path = UIViewController;
 			sourceTree = "<group>";
 		};
+		F109E8B424E4265B00BF2391 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				F109E8B524E4267600BF2391 /* Constants+UI.swift */,
+				F109E8B724E4268000BF2391 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F109E8B924E426B300BF2391 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				F109E8BA24E426D200BF2391 /* AppDelegateShareable.swift */,
+				F109E8BC24E426EE00BF2391 /* AutoIdentifierCell.swift */,
+				F109E8BE24E4272600BF2391 /* CommonInitable.swift */,
+				F109E8C024E4273D00BF2391 /* SceneProtocol.swift */,
+				F109E8C224E428A100BF2391 /* StoryboardInstantiable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		F155CF7524E2D0D60005C933 = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +208,8 @@
 		F155CF8024E2D0D60005C933 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				F109E8B924E426B300BF2391 /* Protocols */,
+				F109E8B424E4265B00BF2391 /* Constants */,
 				F109E89724E4181400BF2391 /* Extensions */,
 				F155CF9924E2D0EB0005C933 /* Libraries */,
 				F155CF9824E2D0E50005C933 /* UI */,
@@ -395,11 +432,16 @@
 			files = (
 				F109E8A124E419B800BF2391 /* UINavigationController+PopAnimation.swift in Sources */,
 				F155CF8624E2D0D60005C933 /* ViewController.swift in Sources */,
+				F109E8C124E4273D00BF2391 /* SceneProtocol.swift in Sources */,
 				F155CF8224E2D0D60005C933 /* AppDelegate.swift in Sources */,
+				F109E8C324E428A100BF2391 /* StoryboardInstantiable.swift in Sources */,
 				F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */,
 				F109E8B024E41DD100BF2391 /* NSObject+ClassName.swift in Sources */,
+				F109E8BD24E426EE00BF2391 /* AutoIdentifierCell.swift in Sources */,
 				F109E8A824E41B0D00BF2391 /* UIColor+AppColors.swift in Sources */,
 				F109E8B324E41E1100BF2391 /* UIViewController+NavigationBar.swift in Sources */,
+				F109E8BB24E426D200BF2391 /* AppDelegateShareable.swift in Sources */,
+				F109E8B824E4268000BF2391 /* Constants.swift in Sources */,
 				F109E8A424E41AB900BF2391 /* CGFloat+RGB.swift in Sources */,
 				F109E8A624E41AE700BF2391 /* Int+RGB.swift in Sources */,
 				F109E89F24E419AA00BF2391 /* UINavigationController+NavigationBarStyle.swift in Sources */,
@@ -407,6 +449,8 @@
 				F155CF8C24E2D0D60005C933 /* Timer.xcdatamodeld in Sources */,
 				F109E89B24E4198100BF2391 /* UINavigationController+RootViewController.swift in Sources */,
 				F109E89D24E4199600BF2391 /* UINavigationController+SwapTransition.swift in Sources */,
+				F109E8B624E4267600BF2391 /* Constants+UI.swift in Sources */,
+				F109E8BF24E4272600BF2391 /* CommonInitable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
