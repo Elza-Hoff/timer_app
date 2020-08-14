@@ -259,6 +259,7 @@
 		F155CF8024E2D0D60005C933 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				F168EB6024E6A849001F1F8D /* Core */,
 				F109E8B924E426B300BF2391 /* Protocols */,
 				F109E8B424E4265B00BF2391 /* Constants */,
 				F109E89724E4181400BF2391 /* Extensions */,
@@ -396,6 +397,21 @@
 				F1E7445224E5B6E00012BE48 /* TimerViewController.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		F168EB6024E6A849001F1F8D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F168EB6124E6A850001F1F8D /* Managers */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F168EB6124E6A850001F1F8D /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		F1E7444F24E5B6AB0012BE48 /* Extensions */ = {
