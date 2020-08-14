@@ -64,6 +64,10 @@ class TimerViewModel: NSObject {
         return time + Separators.space + (timerRecord.timerDescription ?? "")
     }
     
+    func getLastTimerDescription() -> String? {
+        return self.timers.last?.timerDescription
+    }
+    
     func getCellsCount() -> Int {
         return self.timers.count
     }
@@ -105,7 +109,7 @@ class TimerViewModel: NSObject {
     //MARK: - CoreData
     
     func fetchAllTimers() {
-        self.timers = CoreDataManager.getItems(name: Models.userTimer.rawValue)
+        self.timers = CoreDataManager.getItems(name: Models.userTimer.rawValue).sorted(by: {$0.date! > $1.date!})
         self.delegate?.shouldUpdateTableView()
     }
     
@@ -121,7 +125,7 @@ class TimerViewModel: NSObject {
     }
     
     func deleteLastTimerRecord() {
-        CoreDataManager.delete(model: self.timers.last)
+        CoreDataManager.delete(model: self.timers.first)
         self.fetchAllTimers()
     }
 }

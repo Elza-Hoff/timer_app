@@ -26,6 +26,9 @@ extension TimerViewController: TimerViewModelDelegate {
     func timerDidEnd() {
         //TO DO: local notification
         self.prepareTimeUIFor(start: false)
+        if let description = self.viewModel.getLastTimerDescription() {
+            self.showToast(message: description)
+        }
     }
     
     func timerWasCancelled() {
