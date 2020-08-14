@@ -10,8 +10,10 @@ import Foundation
 
 extension TimerViewController: TimerViewModelDelegate {
     
-    func showErrorToast(description: String) {
-        
+    func showToast(error: Error) {
+        if error == .noTimerTitle || error == .invalidTime {
+            self.prepareTimeUIFor(start: false)
+        }
     }
     
     func updatePickerViewWith(hours: Int, minutes: Int, seconds: Int) {
@@ -22,8 +24,11 @@ extension TimerViewController: TimerViewModelDelegate {
     
     func timerDidEnd() {
         //TO DO: local notification
-        self.setControlPanel(hidden: true)
-        self.setTimerViewInteractions(enabled: true)
+        self.prepareTimeUIFor(start: false)
+    }
+    
+    func timerWasCancelled() {
+        self.prepareTimeUIFor(start: false)
     }
     
     func shouldUpdateTableView() {

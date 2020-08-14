@@ -50,10 +50,6 @@ class TimerViewController: BaseViewController {
         self.hideBackButton()
     }
     
-    func setControlPanel(hidden: Bool) {
-        self.vControlButtons.isHidden = hidden
-    }
-    
     func updateTableView() {
         return self.tableView.reloadData()
     }
@@ -62,8 +58,22 @@ class TimerViewController: BaseViewController {
         self.vTimer.select(row: row, component: component)
     }
     
-    func setTimerViewInteractions(enabled: Bool) {
+    func prepareTimeUIFor(start: Bool) {
+        self.setControlPanel(hidden: !start)
+        self.setTimerViewInteractions(enabled: !start)
+        self.setAddButtom(enabled: !start)
+    }
+    
+    private func setControlPanel(hidden: Bool) {
+        self.vControlButtons.isHidden = hidden
+    }
+    
+    private func setTimerViewInteractions(enabled: Bool) {
         self.vTimer.setInteraction(enabled: enabled)
+    }
+    
+    private func setAddButtom(enabled: Bool) {
+        self.btnAdd.isUserInteractionEnabled = enabled
     }
     
     private func registerCells() {
@@ -77,11 +87,12 @@ class TimerViewController: BaseViewController {
     //MARK: - Handler
     
     @IBAction func didTouchAddButton(_ sender: Any) {
+        self.prepareTimeUIFor(start: true)
         self.viewModel.setTimer(with: "test")
     }
     
     @IBAction func didTouchCancelButton(_ sender: Any) {
-        
+        self.viewModel.killTimer()
     }
     
     @IBAction func didTouchPauseButton(_ sender: Any) {

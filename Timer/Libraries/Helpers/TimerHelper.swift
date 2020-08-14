@@ -18,21 +18,26 @@ class TimerHelper: NSObject {
     
     //MARK: - Properties
     
-    var timer = Timer()
+    private var timer = Timer()
     
-    var secondsToTheEnd: Int = 0
+    private var secondsToTheEnd: Int = 0
+    
+    private var isRunning = false
+    
+    private var isCanceled = false
     
     var secondCallback: ((Int) -> ())
     
     var timerDidEndCallback: (() -> ())
     
-    var isRunning = false
-    
+    var timerWasCanceledCallback: (() ->())
+        
     //MARK: - Initialization
     
-    init(secondCallback: @escaping ((Int) -> ()), timerDidEnd: @escaping (() ->())) {
+    init(secondCallback: @escaping ((Int) -> ()), timerDidEnd: @escaping (() ->()), canceled: @escaping(() ->())) {
         self.secondCallback = secondCallback
         self.timerDidEndCallback = timerDidEnd
+        self.timerWasCanceledCallback = canceled
     }
     
     //MARK: - Lifecycle
@@ -41,12 +46,16 @@ class TimerHelper: NSObject {
         self.secondsToTheEnd = seconds
         self.timer = Timer.scheduledTimer(timeInterval: Defaults.second, target: self, selector: #selector(secondDidPass), userInfo: nil, repeats: true)
         self.isRunning = true
+        self.isCanceled = false
     }
     
     func pause() {
         if self.isRunning {
             self.timer.invalidate()
             self.isRunning = false
+        } else if self.isCanceled {
+            self.timer.invalidate()
+            self.isCanceled = false
         }
     }
     
@@ -56,9 +65,19 @@ class TimerHelper: NSObject {
         }
     }
     
+    func cancel() {
+        self.isCanceled = true
+        self.secondsToTheEnd = 0
+        self.checkIfTimerDidReachTheEnd()
+    }
+    
     private func checkIfTimerDidReachTheEnd() {
-        if secondsToTheEnd == 0 {
-            self.timerDidEndCallback()
+        if self.secondsToTheEnd == 0 {
+            if self.isCanceled {
+                self.timerWasCanceledCallback()
+            } else {
+                self.timerDidEndCallback()
+            }
             self.pause()
         }
     }

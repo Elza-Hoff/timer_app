@@ -63,3 +63,22 @@ enum TimeDescription {
 enum Separators {
     static let space = " "
 }
+
+//MARK: - Errors
+
+enum Error: Swift.Error {
+    case invalidTime
+    case noTimerTitle
+    
+    var description: String {
+        switch self {
+        case .invalidTime: return ErrorDescription.invalidTime.rawValue
+        case .noTimerTitle: return ErrorDescription.noTimerTitle.rawValue
+        }
+    }
+}
+
+enum ErrorDescription: String {
+    case invalidTime = "Please set valid time"
+    case noTimerTitle = "Timer title is missing, please enter it"
+}

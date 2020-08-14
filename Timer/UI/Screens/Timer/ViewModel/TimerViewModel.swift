@@ -10,23 +10,18 @@ import Foundation
 
 protocol TimerViewModelDelegate: class {
     
-    func showErrorToast(description: String)
+    func showToast(error: Error)
     
     func updatePickerViewWith(hours: Int, minutes: Int, seconds: Int)
     
     func timerDidEnd()
     
+    func timerWasCancelled()
+    
     func shouldUpdateTableView()
 }
 
 class TimerViewModel: NSObject {
-    
-    //MARK: - Defaults
-    
-    private enum Defaults {
-        static let titleIsMissing = "Timer title is missing, please enter it"
-        static let invalidTime = "Please set valid time"
-    }
     
     //MARK: - Properties
     
@@ -36,8 +31,12 @@ class TimerViewModel: NSObject {
         let helper = TimerHelper(secondCallback: { (lastedSeconds) in
             let timeLasted = lastedSeconds.getSeparatedTime()
             self.delegate?.updatePickerViewWith(hours: timeLasted.hours, minutes: timeLasted.minutes, seconds: timeLasted.seconds)
-        }) {
+        }, timerDidEnd: {
             self.delegate?.timerDidEnd()
+        }) {
+            //TODO: delete timer from the tableView
+            self.delegate?.timerWasCancelled()
+            self.delegate?.shouldUpdateTableView()
         }
         return helper
     }()
@@ -48,15 +47,27 @@ class TimerViewModel: NSObject {
     
     func setTimer(with title: String?) {
         guard let title = title else {
-            self.delegate?.showErrorToast(description: Defaults.titleIsMissing)
+            self.delegate?.showToast(error: .noTimerTitle)
             return
         }
         if self.secondsToTheEnd == 0 {
-            self.delegate?.showErrorToast(description: Defaults.invalidTime)
+            self.delegate?.showToast(error: .invalidTime)
             return
         }
         self.timerHelper.startTimer(for: secondsToTheEnd)
         self.delegate?.shouldUpdateTableView()
+    }
+    
+    func killTimer() {
+        self.timerHelper.cancel()
+    }
+    
+    func pauseTimer() {
+        self.timerHelper.pause()
+    }
+    
+    func resumeTimer() {
+        self.timerHelper.resume()
     }
     
     func calculateSecondsFrom(hour: String, miutes: String, seconds: String) {
