@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 protocol TimerViewModelDelegate: class {
     
@@ -23,6 +24,15 @@ protocol TimerViewModelDelegate: class {
 
 class TimerViewModel: NSObject {
     
+    //MARK: - Defaults
+    
+    private enum Templates {
+        static let timeTemplate = "{h}h {m}m {s}s"
+        static let second = "{s}"
+        static let minute = "{m}"
+        static let hour = "{h}"
+    }
+    
     //MARK: - Properties
     
     weak var delegate: TimerViewModelDelegate?
@@ -34,16 +44,29 @@ class TimerViewModel: NSObject {
         }, timerDidEnd: {
             self.delegate?.timerDidEnd()
         }) {
-            //TODO: delete timer from the tableView
+            //TODO: delete timer record from the tableView
             self.delegate?.timerWasCancelled()
             self.delegate?.shouldUpdateTableView()
         }
         return helper
     }()
     
-    var secondsToTheEnd: Int = 0
+    private var secondsToTheEnd: Int = 0
+    
+    private var timers = [UserTimer]()
     
     //MARK: - Lifecycle
+    
+    func getCellTitle(for indexPath: IndexPath) -> String? {
+        let timerRecord = self.timers[indexPath.row]
+        let timeData = Int(timerRecord.time).getSeparatedTime()
+        let time = Templates.timeTemplate.replacingOccurrences(of: Templates.hour, with: timeData.hours.description).replacingOccurrences(of: Templates.minute, with: timeData.minutes.description).replacingOccurrences(of: Templates.second, with: timeData.seconds.description)
+        return time + Separators.space + (timerRecord.timerDescription ?? "")
+    }
+    
+    func getCellsCount() -> Int {
+        return self.timers.count
+    }
     
     func setTimer(with title: String?) {
         guard let title = title else {
@@ -55,12 +78,13 @@ class TimerViewModel: NSObject {
             return
         }
         self.timerHelper.startTimer(for: self.secondsToTheEnd)
-        self.delegate?.shouldUpdateTableView()
+        self.createTimerRecord(title: title, time: self.secondsToTheEnd)
     }
     
     func killTimer() {
         self.secondsToTheEnd = 0
         self.timerHelper.cancel()
+        self.deleteLastTimerRecord()
     }
     
     func pauseTimer() {
@@ -76,5 +100,28 @@ class TimerViewModel: NSObject {
         let minutesDigits = (Int(miutes.digits) ?? 0) * 60
         let secondDigits = Int(seconds.digits) ?? 0
         self.secondsToTheEnd = hourDigits + minutesDigits + secondDigits
+    }
+    
+    //MARK: - CoreData
+    
+    func fetchAllTimers() {
+        self.timers = CoreDataManager.getItems(name: Models.userTimer.rawValue)
+        self.delegate?.shouldUpdateTableView()
+    }
+    
+    func createTimerRecord(title: String, time: Int) {
+        CoreDataManager.create(name: Models.userTimer.rawValue)
+        { (item: UserTimer) in
+            item.date = Date()
+            item.timerDescription = title
+            item.id = Int32(self.timers.count)
+            item.time = Int32(time)
+            self.fetchAllTimers()
+        }
+    }
+    
+    func deleteLastTimerRecord() {
+        CoreDataManager.delete(model: self.timers.last)
+        self.fetchAllTimers()
     }
 }

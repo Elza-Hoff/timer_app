@@ -82,3 +82,9 @@ enum ErrorDescription: String {
     case invalidTime = "Please set valid time"
     case noTimerTitle = "Timer title is missing, please enter it"
 }
+
+//MARK: - CoreData
+
+enum Models: String {
+    case userTimer = "UserTimer"
+}

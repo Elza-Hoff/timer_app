@@ -44,6 +44,7 @@ class TimerViewController: BaseViewController {
         self.registerCells()
         self.setControlPanel(hidden: true)
         self.configure()
+        self.refreshViewModelTimersData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,11 +100,15 @@ class TimerViewController: BaseViewController {
         self.btnPause.setTitle(Defaults.resume, for: .selected)
     }
     
+    private func refreshViewModelTimersData() {
+        self.viewModel.fetchAllTimers()
+    }
+    
     //MARK: - Handler
     
     @IBAction func didTouchAddButton(_ sender: Any) {
         self.prepareTimeUIFor(start: true)
-        self.viewModel.setTimer(with: "test")
+        self.viewModel.setTimer(with: self.tfTimerTitle.text)
     }
     
     @IBAction func didTouchCancelButton(_ sender: Any) {

@@ -25,11 +25,12 @@ extension TimerViewController: UITableViewDelegate {
 extension TimerViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.viewModel.getCellsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TimerTableViewCell.identifier, for: indexPath) as! TimerTableViewCell
+        cell.timerDescription = self.viewModel.getCellTitle(for: indexPath)
         return cell
     }
     

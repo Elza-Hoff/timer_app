@@ -43,6 +43,7 @@
 		F155CFA624E2D1550005C933 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F155CFA524E2D1550005C933 /* Main.storyboard */; };
 		F155CFA824E2D1620005C933 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F155CFA724E2D1620005C933 /* Splash.storyboard */; };
 		F155CFAA24E2D16C0005C933 /* Timer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F155CFA924E2D16C0005C933 /* Timer.storyboard */; };
+		F168EB6324E6A8BC001F1F8D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168EB6224E6A8BC001F1F8D /* CoreDataManager.swift */; };
 		F1E7444E24E5B6090012BE48 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7444D24E5B6090012BE48 /* SplashViewController.swift */; };
 		F1E7445124E5B6BC0012BE48 /* Splash+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7445024E5B6BC0012BE48 /* Splash+Scene.swift */; };
 		F1E7445324E5B6E00012BE48 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E7445224E5B6E00012BE48 /* TimerViewController.swift */; };
@@ -101,6 +102,7 @@
 		F155CFA524E2D1550005C933 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F155CFA724E2D1620005C933 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		F155CFA924E2D16C0005C933 /* Timer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timer.storyboard; sourceTree = "<group>"; };
+		F168EB6224E6A8BC001F1F8D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		F1E7444D24E5B6090012BE48 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		F1E7445024E5B6BC0012BE48 /* Splash+Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Splash+Scene.swift"; sourceTree = "<group>"; };
 		F1E7445224E5B6E00012BE48 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		F155CF8024E2D0D60005C933 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
+				F168EB6424E6AC34001F1F8D /* Database */,
 				F168EB6024E6A849001F1F8D /* Core */,
 				F109E8B924E426B300BF2391 /* Protocols */,
 				F109E8B424E4265B00BF2391 /* Constants */,
@@ -410,8 +413,24 @@
 		F168EB6124E6A850001F1F8D /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				F168EB6224E6A8BC001F1F8D /* CoreDataManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		F168EB6424E6AC34001F1F8D /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				F168EB6624E6AC8C001F1F8D /* Models */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		F168EB6624E6AC8C001F1F8D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F1E7444F24E5B6AB0012BE48 /* Extensions */ = {
@@ -586,6 +605,7 @@
 				F109E8D124E429AC00BF2391 /* BaseViewController.swift in Sources */,
 				F109E8C324E428A100BF2391 /* StoryboardInstantiable.swift in Sources */,
 				F155CF8424E2D0D60005C933 /* SceneDelegate.swift in Sources */,
+				F168EB6324E6A8BC001F1F8D /* CoreDataManager.swift in Sources */,
 				F1E7447124E5E5680012BE48 /* TimerViewController+ TimerPickerViewDelegate.swift in Sources */,
 				F109E8D324E42A2A00BF2391 /* MainNavigationController.swift in Sources */,
 				F1E7444E24E5B6090012BE48 /* SplashViewController.swift in Sources */,
