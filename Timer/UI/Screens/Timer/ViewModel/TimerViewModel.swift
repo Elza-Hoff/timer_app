@@ -54,11 +54,12 @@ class TimerViewModel: NSObject {
             self.delegate?.showToast(error: .invalidTime)
             return
         }
-        self.timerHelper.startTimer(for: secondsToTheEnd)
+        self.timerHelper.startTimer(for: self.secondsToTheEnd)
         self.delegate?.shouldUpdateTableView()
     }
     
     func killTimer() {
+        self.secondsToTheEnd = 0
         self.timerHelper.cancel()
     }
     
@@ -71,7 +72,7 @@ class TimerViewModel: NSObject {
     }
     
     func calculateSecondsFrom(hour: String, miutes: String, seconds: String) {
-        let hourDigits = (Int(hour.digits) ?? 0) * 60
+        let hourDigits = (Int(hour.digits) ?? 0) * 3600
         let minutesDigits = (Int(miutes.digits) ?? 0) * 60
         let secondDigits = Int(seconds.digits) ?? 0
         self.secondsToTheEnd = hourDigits + minutesDigits + secondDigits

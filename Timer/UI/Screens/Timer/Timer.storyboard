@@ -146,6 +146,7 @@
                     </view>
                     <connections>
                         <outlet property="btnAdd" destination="b64-vQ-KJm" id="lrR-oU-m8Q"/>
+                        <outlet property="btnPause" destination="Fes-uG-oXT" id="NGN-MW-M8h"/>
                         <outlet property="tableView" destination="nbo-jS-jx7" id="geL-tn-JFB"/>
                         <outlet property="tfTimerTitle" destination="6vK-4V-Qc2" id="yqu-sY-aau"/>
                         <outlet property="vControlButtons" destination="wMR-gF-UoT" id="nw3-2M-PlY"/>

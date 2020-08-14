@@ -29,6 +29,7 @@ extension TimerViewController: TimerViewModelDelegate {
     
     func timerWasCancelled() {
         self.prepareTimeUIFor(start: false)
+        self.resetPickerViewToStartState()
     }
     
     func shouldUpdateTableView() {

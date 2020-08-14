@@ -14,6 +14,7 @@ class TimerViewController: BaseViewController {
     
     private enum Defaults {
         static let title = "Timer"
+        static let resume = "Resume"
     }
     
     //MARK: - Properties
@@ -21,6 +22,8 @@ class TimerViewController: BaseViewController {
     @IBOutlet weak private var vTimer: TimerPickerView!
     
     @IBOutlet weak private var btnAdd: CircleButton!
+    
+    @IBOutlet weak private var btnPause: RoundedButton!
     
     @IBOutlet weak private var tfTimerTitle: UITextField!
     
@@ -62,6 +65,13 @@ class TimerViewController: BaseViewController {
         self.setControlPanel(hidden: !start)
         self.setTimerViewInteractions(enabled: !start)
         self.setAddButtom(enabled: !start)
+        self.setPauseButton(selected: !start)
+    }
+    
+    func resetPickerViewToStartState() {
+        self.scrollPickerView(row: 0, component: Time.hours.rawValue)
+        self.scrollPickerView(row: 0, component: Time.minutes.rawValue)
+        self.scrollPickerView(row: 0, component: Time.seconds.rawValue)
     }
     
     private func setControlPanel(hidden: Bool) {
@@ -76,12 +86,17 @@ class TimerViewController: BaseViewController {
         self.btnAdd.isUserInteractionEnabled = enabled
     }
     
+    private func setPauseButton(selected: Bool) {
+        self.btnPause.isSelected = selected
+    }
+    
     private func registerCells() {
         self.tableView.register(UINib(nibName: TimerTableViewCell.nibName, bundle: nil), forCellReuseIdentifier: TimerTableViewCell.identifier)
     }
         
     private func configure() {
         self.vTimer.delegate = self
+        self.btnPause.setTitle(Defaults.resume, for: .selected)
     }
     
     //MARK: - Handler
@@ -96,7 +111,12 @@ class TimerViewController: BaseViewController {
     }
     
     @IBAction func didTouchPauseButton(_ sender: Any) {
-        
+        self.btnPause.isSelected = !self.btnPause.isSelected
+        if self.btnPause.isSelected {
+            self.viewModel.pauseTimer()
+        } else {
+            self.viewModel.resumeTimer()
+        }
     }
     
     
