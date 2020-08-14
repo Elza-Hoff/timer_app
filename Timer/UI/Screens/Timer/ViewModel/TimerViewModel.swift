@@ -69,7 +69,7 @@ class TimerViewModel: NSObject {
     }
     
     func setTimer(with title: String?) {
-        guard let title = title else {
+        if title == nil || title?.isEmpty ?? true {
             self.delegate?.showToast(error: .noTimerTitle)
             return
         }
@@ -78,7 +78,7 @@ class TimerViewModel: NSObject {
             return
         }
         self.timerHelper.startTimer(for: self.secondsToTheEnd)
-        self.createTimerRecord(title: title, time: self.secondsToTheEnd)
+        self.createTimerRecord(title: title!, time: self.secondsToTheEnd)
     }
     
     func killTimer() {

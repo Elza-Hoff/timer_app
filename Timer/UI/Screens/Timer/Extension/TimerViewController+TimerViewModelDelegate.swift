@@ -6,7 +6,7 @@
 //  Copyright © 2020 Yelyzaveta Kartseva. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension TimerViewController: TimerViewModelDelegate {
     
@@ -14,6 +14,7 @@ extension TimerViewController: TimerViewModelDelegate {
         if error == .noTimerTitle || error == .invalidTime {
             self.prepareTimeUIFor(start: false)
         }
+        self.showToast(message: error.description)
     }
     
     func updatePickerViewWith(hours: Int, minutes: Int, seconds: Int) {

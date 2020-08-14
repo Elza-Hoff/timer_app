@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TimerViewController: BaseViewController {
+class TimerViewController: BaseViewController, ErrorToastProtocol {
     
     //MARK: - Defaults
     
