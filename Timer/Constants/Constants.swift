@@ -15,3 +15,51 @@ enum Storyboard {
     static let splash               = "Splash"
     static let timer                = "Timer"
 }
+
+enum Time: Int, CaseIterable {
+    case hours = 0
+    case minutes
+    case seconds
+    
+    var timeStringArray: [String] {
+        switch self {
+        case .seconds:
+            return 59.arrayFromZeroToSelf.map({$0.description + Separators.space + TimeDescription.secondsShort})
+        case .minutes:
+            return 59.arrayFromZeroToSelf.map({$0.description + Separators.space + TimeDescription.minutesShort})
+        case .hours:
+            return 23.arrayFromZeroToSelf.map { (hour) -> String in
+                if hour > 1 && hour != 0 {
+                    return hour.description + Separators.space + TimeDescription.hours
+                } else {
+                    return hour.description + Separators.space + TimeDescription.hour
+                }
+            }
+        }
+    }
+    
+    var numberOfRows: Int {
+        return self.timeStringArray.count
+    }
+    
+    static func from(component: Int) -> Time? {
+        switch component {
+        case Time.seconds.rawValue: return .seconds
+        case Time.minutes.rawValue: return .minutes
+        case Time.hours.rawValue: return .hours
+        default: return nil
+        }
+    }
+    
+}
+
+enum TimeDescription {
+    static let hour = "hour"
+    static let hours = "hours"
+    static let minutesShort = "min"
+    static let secondsShort = "sec"
+}
+
+enum Separators {
+    static let space = " "
+}

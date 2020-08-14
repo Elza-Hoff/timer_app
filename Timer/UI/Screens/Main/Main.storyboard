@@ -1,7 +1,68 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f08-Dw-bgW">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Base Navigation Controller-->
+        <scene sceneID="MHM-yc-XHs">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="f08-Dw-bgW" customClass="BaseNavigationController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lbD-vq-R7j">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="P24-Sm-NsZ" kind="relationship" relationship="rootViewController" id="OYW-KC-gTp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fL3-rp-XmW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-912" y="68"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="wYl-dv-YPw">
+            <objects>
+                <viewController id="P24-Sm-NsZ" customClass="RootViewController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-2a-8o8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YgT-bL-r8M">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <connections>
+                                    <segue destination="3oU-OY-slm" kind="embed" id="2wd-km-i1B"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YgT-bL-r8M" firstAttribute="top" secondItem="zMn-2a-8o8" secondAttribute="top" id="C8R-84-io0"/>
+                            <constraint firstAttribute="bottom" secondItem="YgT-bL-r8M" secondAttribute="bottom" id="E0i-bo-bea"/>
+                            <constraint firstItem="YgT-bL-r8M" firstAttribute="leading" secondItem="zMn-2a-8o8" secondAttribute="leading" id="W1Q-0r-yll"/>
+                            <constraint firstAttribute="trailing" secondItem="YgT-bL-r8M" secondAttribute="trailing" id="dfv-Gl-aHL"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wZ5-ND-tl8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JBM-JX-h0h"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPZ-TX-FQv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-141" y="66"/>
+        </scene>
+        <!--Main Navigation Controller-->
+        <scene sceneID="acj-oz-4TT">
+            <objects>
+                <navigationController storyboardIdentifier="MainNavigationController" navigationBarHidden="YES" id="3oU-OY-slm" customClass="MainNavigationController" customModule="Timer" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OZW-fk-eru">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YnD-nL-Rii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="771" y="68"/>
+        </scene>
+    </scenes>
 </document>

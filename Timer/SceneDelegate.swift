@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -18,6 +19,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        self.configure()
+        self.pushLaunchScreen()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -54,3 +57,36 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+
+extension SceneDelegate {
+    
+    private func pushLaunchScreen() {
+        guard let navController = self.window?.rootViewController as? UINavigationController else {
+            print("[SceneDelegate] Failure. Not found navigation controller.")
+            return
+        }
+        navController.view.backgroundColor = UIColor.white
+        navController.setViewControllers([
+            navController.topViewController!,
+            SplashViewController.storyboardInstance()!
+        ], animated: false)
+    }
+    
+}
+
+extension SceneDelegate {
+    
+    // MARK: - General
+    
+    private func configure() {
+        self.keyboardSettings()
+    }
+    
+    // MARK: - Keyboard Settings
+    
+    private func keyboardSettings() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
+    }
+    
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" rowHeight="239" id="vXQ-K5-TNT" customClass="TimerTableViewCell" customModule="Timer" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="473" height="239"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vXQ-K5-TNT" id="4kg-VJ-6dY">
+                <rect key="frame" x="0.0" y="0.0" width="473" height="239"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Bs-8y-VYg" customClass="RoundedView" customModule="Timer" customModuleProvider="target">
+                        <rect key="frame" x="15" y="5" width="443" height="229"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00 One" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAe-T2-vNO">
+                                <rect key="frame" x="8" y="104.5" width="107.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="SAe-T2-vNO" firstAttribute="leading" secondItem="9Bs-8y-VYg" secondAttribute="leading" constant="8" id="Vgx-cm-Ovg"/>
+                            <constraint firstItem="SAe-T2-vNO" firstAttribute="centerY" secondItem="9Bs-8y-VYg" secondAttribute="centerY" id="gNM-Sr-Hgb"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" red="1" green="0.85747026049999997" blue="0.28023715030000002" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="displayP3"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="9Bs-8y-VYg" firstAttribute="top" secondItem="4kg-VJ-6dY" secondAttribute="top" constant="5" id="WIc-Jm-Wku"/>
+                    <constraint firstAttribute="trailing" secondItem="9Bs-8y-VYg" secondAttribute="trailing" constant="15" id="XQo-wM-hwT"/>
+                    <constraint firstItem="9Bs-8y-VYg" firstAttribute="leading" secondItem="4kg-VJ-6dY" secondAttribute="leading" constant="15" id="uAz-Ni-YPN"/>
+                    <constraint firstAttribute="bottom" secondItem="9Bs-8y-VYg" secondAttribute="bottom" constant="5" id="xJL-Ra-0WJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="lblTimerDescription" destination="SAe-T2-vNO" id="LbA-X0-OWb"/>
+            </connections>
+            <point key="canvasLocation" x="142.75362318840581" y="108.14732142857143"/>
+        </tableViewCell>
+    </objects>
+</document>
