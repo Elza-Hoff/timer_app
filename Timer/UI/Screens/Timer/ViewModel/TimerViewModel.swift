@@ -65,7 +65,7 @@ class TimerViewModel: NSObject {
     }
     
     func getLastTimerDescription() -> String? {
-        return self.timers.last?.timerDescription
+        return self.timers.first?.timerDescription
     }
     
     func getCellsCount() -> Int {
