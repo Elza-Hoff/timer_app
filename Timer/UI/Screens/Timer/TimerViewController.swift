@@ -55,7 +55,9 @@ class TimerViewController: BaseViewController, ErrorToastProtocol {
     }
     
     func updateTableView() {
-        return self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func scrollPickerView(row: Int, component: Int) {
